@@ -18,7 +18,12 @@ define([
         },
 
         initialize: function () {
-            this.tpl = _.template($('#search_item-tpl').html());
+            if(this.model.get('content_type') === "sequence") {
+                this.tpl = _.template($('#search_item_seq-tpl').html());
+            }
+            else {
+                this.tpl = _.template($('#search_item-tpl').html());
+            }
         },
 
         render: function () {
