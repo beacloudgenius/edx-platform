@@ -2,108 +2,125 @@
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
 <%namespace name='static' file='static_content.html'/>
-<%! from microsite_configuration.templatetags.microsite import platform_name %>
+## WARNING: These files are specific to edx.org and are not used in installations outside of that domain. Open edX users will want to use the file "footer.html" for any changes or overrides.
+<div class="wrapper wrapper-footer edx-footer edx-footer-new">
+  <footer id="footer-global" class="footer-global" role="contentinfo" aria-label="Footer">
 
-<div class="wrapper wrapper-footer">
-  <footer>
-    <div class="colophon">
-      <nav class="nav-colophon">
-      <ol>
-          <li class="nav-colophon-01">
-          <a id="about" href="${marketing_link('ABOUT')}">
-              ${_("About")}
-          </a>
-          </li>
-          %if marketing_link('JOBS') and marketing_link('JOBS') != '#':
-            <li class="nav-colophon-02">
-              <a id="jobs" href="${marketing_link('JOBS')}">
-                ${_("Jobs")}
-              </a>
-            </li>
-          %endif
-          %if marketing_link('NEWS') and marketing_link('NEWS') != '#':
-            <li class="nav-colophon-03">
-              <a id="news" href="${marketing_link('NEWS')}">
-                ${_("News")}
-              </a>
-            </li>
-          %endif
-          <li class="nav-colophon-04">
-          <a id="faq" href="${marketing_link('FAQ')}">
-              ${_("FAQ")}
-          </a>
-          </li>
-          <li class="nav-colophon-05">
-          <a id="contact" href="${marketing_link('CONTACT')}">
-              ${_("Contact")}
-          </a>
-          </li>
-      </ol>
-      </nav>
+    <div class="footer-about">
+      <h2 class="sr footer-about-title">${_("About edX")}</h2>
 
-      <div class="wrapper-logo">
+      <div class="footer-about-logo">
+        <img alt="Cloud Genius" src="${static.url('images/default-theme/logo.png')}">
+      </div>
+
+      <div class="footer-about-copy">
         <p>
-          <a href="/">
-            ## this is just a placeholder logo
-            ## feel free to change this logo to your own by replacing "logo.png" with your own logo
-            <img alt="organization logo placeholder" src="/static/images/default-theme/logo.png">
+          ${_(
+            "Vendor neutrality, open source focus, best of breed solutions, practical hands on"
+            "experiences in our sessions, zero powerpoint, no lecturing, sheer collaboration"
+            "and productivity are just some of the factors that you see, but the real kicker"
+            "is the immensely positive feedback from our graduates that really makes us tick."
+            ).format(
+          )}
+        </p>
+        <small>CIO Magazine rated us among the top 10 cloud programs.<br/><br/></small>
+      </div>
+
+      <div class="footer-about-copyright">
+      	## Using "edX Inc." explicitly here for copyright purposes (settings.PLATFORM_NAME is just "edX", and this footer is only used on edx.org)
+      	<p>&copy; ${settings.COPYRIGHT_YEAR} Cloud Genius</p>
+
+      	## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+      	<p>
+      	  ## Translators: 'Cloud Genius' is a trademark of 'Cloud Genius'. Please do not translate any of these trademarks and company names.
+      	  ${_("Cloud Genius is a registered trademark of {link_start}Cloud Genius{link_end}").format(
+      	      link_start=u"<a href='https://be.a.cloudgeni.us/'><span class='copy'>",
+      	      link_end=u"</span></a>"
+      	  )}
+      	</p>
+      </div>
+
+      <div class="footer-about-links">
+        <a href="${marketing_link('TOS')}"><span class="copy">${_("Terms of Service and Honor Code")}</span></a>
+        <a href="${marketing_link('PRIVACY')}"><span class="copy">${_("Privacy Policy")}</span> <span class="note">${_("(Revised 4/16/2015)")}</span></a>
+      </div>
+    </div>
+
+    <nav class="footer-nav" role="navigation" aria-label="About Us">
+      <h2 class="footer-nav-title">${_("About edX")}</h2>
+
+      <div class="footer-nav-links">
+        <a href="${marketing_link('ABOUT')}"><span class="copy">${_("About")}</span></a>
+        ## href="${marketing_link('NEWS')}"
+        <a href="${marketing_link('CONTACT')}"><span class="copy">${_("Contact")}</span></a>
+        <a href="${marketing_link('FAQ')}"><span class="copy">${_("FAQ")}</span></a>
+        ## href="${marketing_link('BLOG')}"
+        <a href="//be.a.cloudgeni.us/blog">Blog</a>
+        ## href="${marketing_link('DONATE')}"
+        ## href="${marketing_link('JOBS')}"
+      </div>
+    </nav>
+
+    <div class="footer-follow">
+      <h2 class="footer-follow-title">${_("Follow Us")}</h2>
+
+      <div class="footer-follow-links">
+        ## Translators: This is the website name of www.twitter.com. Please
+        ## translate this the way that Twitter advertises in your language.
+        <a href="${settings.PLATFORM_TWITTER_URL}" title="${_("Twitter")}" rel="noreferrer">
+          <i class="icon fa fa-twitter element-invisible"></i>
+          <span class="copy">${_("Twitter")}</span>
+        </a>
+        ## Translators: This is the website name of www.facebook.com. Please
+        ## translate this the way that Facebook advertises in your language.
+        <a href="${settings.PLATFORM_FACEBOOK_ACCOUNT}" title="${_("Facebook")}" rel="noreferrer">
+          <i class="icon fa fa-facebook element-invisible"></i>
+          <span class="copy">${_("Facebook")}</span>
+        </a>
+        ## Translators: This is the website name of www.meetup.com. Please
+        ## translate this the way that Meetup advertises in your language.
+        <a href="${settings.PLATFORM_MEETUP_URL}" title="${_("Meetup")}" rel="noreferrer">
+          <i class="icon fa fa-calendar element-invisible"></i>
+          <span class="copy">${_("Meetup")}</span>
+        </a>
+        ## Translators: This is the website name of www.linked.com. Please
+        ## translate this the way that LinkedIn advertises in your language.
+        <a href="${settings.PLATFORM_LINKEDIN_URL}" title="${_("LinkedIn")}" rel="noreferrer">
+          <i class="icon fa fa-linkedin element-invisible"></i>
+          <span class="copy">${_("LinkedIn")}</span>
+        </a>
+        ## Translators: This is the website name of plus.google.com. Please
+        ## translate this the way that Google+ advertises in your language.
+        <a href="${settings.PLATFORM_GOOGLE_PLUS_URL}" title="${_("Google+")}" rel="noreferrer">
+          <i class="icon fa fa-google-plus element-invisible"></i>
+          <span class="copy">${_("Google+")}</span>
+        </a>
+      </div>
+
+      % if settings.FEATURES.get('ENABLE_FOOTER_MOBILE_APP_LINKS'):
+      <div class="footer-mobile-apps">
+        <h2 class="footer-nav-title">${_("Mobile Apps")}</h2>
+        <div class="mobile-app-wrapper">
+          <a href="${settings.MOBILE_STORE_URLS.get('apple', '#')}">
+            <img class="app-store" alt="${_("Apple app on Apple Store")}" src="${static.url('images/app/app_store_badge_135x40.svg')}">
+          </a>
+        </div>
+        <div class="mobile-app-wrapper">
+          <a href="${settings.MOBILE_STORE_URLS.get('google', '#')}">
+            <img class="google-play" alt="${_("Android app on Google Play")}" src="${static.url('images/app/google_play_badge_45.png')}">
+          </a>
+        </div>
+      </div>
+      % endif
+      <div class="powered-by">
+        <p>
+          <a href="http://openedx.org/">
+            <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png" alt="${_('Powered by Open edX')}" width="75" height="25" />
           </a>
         </p>
       </div>
-
-      <p class="copyright">&copy; ${settings.COPYRIGHT_YEAR} ${settings.PLATFORM_NAME}.</p>
-
-      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-      <p class="copyright">
-	## Translators: 'Cloud Genius' is a trademark of 'NES Corporation'. Please do not translate any of these trademarks and company names.
-	${_("Cloud Genius is a registered trademark of {link_start}Cloud Genius{link_end}").format(
-	    link_start=u"<a href='https://be.a.cloudgeni.us/'>",
-	    link_end=u"</a>"
-	)}
-      </p>
-        <nav class="nav-legal">
-          <ul>
-	    %if marketing_link('HONOR') and marketing_link('HONOR') != '#':
-            <li class="nav-legal-01">
-	      <%
-		 tos_link = u"<a href='{}'>".format(marketing_link('TOS'))
-		 honor_link = u"<a href='{}'>".format(marketing_link('HONOR'))
-	      %>
-	      ${
-	        _("{tos_link_start}Terms of Service{tos_link_end} and {honor_link_start}Honor Code{honor_link_end}").format(
-	          tos_link_start=tos_link,
-	          tos_link_end="</a>",
-	          honor_link_start=honor_link,
-	          honor_link_end="</a>",
-                )
-	      }
-              </a>
-            </li>
-	    %else:
-            <li class="nav-legal-01">
-              <a href="${marketing_link('TOS')}">${_("Terms of Service")}</a>
-            </li>
-	    %endif
-            <li class="nav-legal-02">
-              <a href="${marketing_link('PRIVACY')}">${_("Privacy Policy")}</a>
-            </li>
-          </ul>
-        </nav>
-    </div>
-
-    ## please leave this link and use one of the logos provided
-    <div class="powered-by">
-      <p>
-        <a href="http://openedx.org/">
-          ## standard powered-by logo
-	  ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
-          ## <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png" alt="${_('Powered by Open edX')}" width="150" height="50" />
-          ## greyscale logo for dark background
-          <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png" alt="${_('Powered by Open edX')}" width="150" height="50" />
-          ## greyscale logo for light background
-          ## <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png" alt="${_('Powered by Open edX')}" width="150" height="50" />
-        </a>
-      </p>
     </div>
   </footer>
 </div>
+
+<script type="text/javascript" src="/static/js/vendor/noreferrer.js" charset="utf-8"></script>
