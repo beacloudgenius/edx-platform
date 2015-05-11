@@ -17,13 +17,14 @@
         <p>
           ${_(
             "Vendor neutrality, open source focus, best of breed solutions, practical hands on"
-            "experiences in our sessions, zero powerpoint, no lecturing, sheer collaboration"
+            "experiences in our sessions, zero powerpoint, no lecturing, sheer collaboration "
             "and productivity are just some of the factors that you see, but the real kicker"
             "is the immensely positive feedback from our graduates that really makes us tick."
             ).format(
           )}
         </p>
-        <small>CIO Magazine rated us among the top 10 cloud programs.<br/><br/></small>
+        <br/><br/>
+        <p>CIO Magazine rated us among the top 10 cloud programs.</p>
       </div>
 
       <div class="footer-about-copyright">
@@ -32,17 +33,19 @@
 
       	## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
       	<p>
+          <small>
       	  ## Translators: 'Cloud Genius' is a trademark of 'Cloud Genius'. Please do not translate any of these trademarks and company names.
       	  ${_("Cloud Genius is a registered trademark of {link_start}Cloud Genius{link_end}").format(
       	      link_start=u"<a href='https://be.a.cloudgeni.us/'><span class='copy'>",
       	      link_end=u"</span></a>"
       	  )}
+        </small>
       	</p>
       </div>
 
       <div class="footer-about-links">
-        <a href="${marketing_link('TOS')}"><span class="copy">${_("Terms of Service and Honor Code")}</span></a>
-        <a href="${marketing_link('PRIVACY')}"><span class="copy">${_("Privacy Policy")}</span> <span class="note">${_("(Revised 4/16/2015)")}</span></a>
+        <small><a href="${marketing_link('TOS')}"><span class="copy">${_("Terms of Service")}</span></a></small>
+        <small><a href="${marketing_link('PRIVACY')}"><span class="copy">${_("Privacy Policy")}</span> <span class="note">${_("(Revised 4/16/2015)")}</span></a></small>
       </div>
     </div>
 
