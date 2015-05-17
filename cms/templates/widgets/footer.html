@@ -4,12 +4,12 @@
 <div class="wrapper-footer wrapper">
   <footer class="primary" role="contentinfo">
     <div class="colophon">
-      <p>&copy; ${settings.COPYRIGHT_YEAR} <a data-rel="edx.org" href="${marketing_link('ROOT')}" rel="external">${settings.PLATFORM_NAME}</a>.</p>
-      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+      <p>&copy; ${settings.COPYRIGHT_YEAR} <a data-rel="https://be.a.cloudgeni.us" href="${marketing_link('ROOT')}" rel="external">${settings.PLATFORM_NAME}</a>.</p>
+      ## Site operators: Please do not remove this paragraph! This attributes back to Cloud Genius and makes your acknowledgement of trademarks clear.
       <p>
-	## Translators: 'EdX', 'edX', 'Studio', and 'Open edX' are trademarks of 'edX Inc.'. Please do not translate any of these trademarks and company names.
-	${_("EdX, Open edX, Studio, and the edX and Open edX logos are registered trademarks or trademarks of {link_start}edX Inc.{link_end}").format(
-	  link_start=u"<a data-rel='edx.org' href='https://www.edx.org/'>",
+	## Translators: Cloud Genius is a registered trademark.'. Please do not translate any of these trademarks and company names.
+	${_("Cloud Genius is a registered trademarks or trademarks of {link_start}Cloud Genius.{link_end}").format(
+	  link_start=u"<a data-rel='https://be.a.cloudgeni.us' href='https://be.a.cloudgeni.us/'>",
 	  link_end=u"</a>"
 	)}
       </p>
@@ -18,18 +18,17 @@
     <nav class="nav-peripheral">
       <ol>
         <li class="nav-item nav-peripheral-tos">
-          <a data-rel="edx.org" href="${marketing_link('TOS')}">${_("Terms of Service")}</a>
+          <a data-rel="https://be.a.cloudgeni.us" href="${marketing_link('TOS')}">${_("Terms of Service")}</a>
         </li>
         <li class="nav-item nav-peripheral-pp">
-          <a data-rel="edx.org" href="${marketing_link('PRIVACY')}">${_("Privacy Policy")}</a>
+          <a data-rel="https://be.a.cloudgeni.us" href="${marketing_link('PRIVACY')}">${_("Privacy Policy")}</a>
         </li>
         % if settings.TENDER_DOMAIN and user.is_authenticated():
         <li class="nav-item nav-peripheral-feedback">
-          <a data-rel="edx.org" href="http://${settings.TENDER_DOMAIN}/discussion/new" class="show-tender" title="${_('Use our feedback tool, Tender, to share your feedback')}">${_("Contact Us")}</a>
+          <a data-rel="https://be.a.cloudgeni.us" href="http://${settings.TENDER_DOMAIN}/discussion/new" class="show-tender" title="${_('Use our feedback tool, Tender, to share your feedback')}">${_("Contact Us")}</a>
         </li>
         % endif
       </ol>
     </nav>
   </footer>
 </div>
-
