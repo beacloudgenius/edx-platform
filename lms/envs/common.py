@@ -1999,14 +1999,14 @@ if FEATURES['ENABLE_EDXNOTES']:
 
 # Configuration used for generating PDF Receipts/Invoices
 PDF_RECEIPT_TAX_ID = 'IRS 26-3718785'
-PDF_RECEIPT_FOOTER_TEXT = 'https://be.a.cloudgeni.us Realize your dream, anytime, anywhere.'
+PDF_RECEIPT_FOOTER_TEXT = 'Realize your dream, anytime, anywhere.'
 PDF_RECEIPT_DISCLAIMER_TEXT = 'https://be.a.cloudgeni.us/tos'
-PDF_RECEIPT_BILLING_ADDRESS = '6505 176th Ave NE\nRedmond, WA 98052 USA\n+1-425-223-3474'
+PDF_RECEIPT_BILLING_ADDRESS = '24281 SE 1st Pl, Sammamish, WA 98074 USA\n+1-425-223-3474'
 PDF_RECEIPT_TERMS_AND_CONDITIONS = 'https://be.a.cloudgeni.us/tos'
 PDF_RECEIPT_TAX_ID_LABEL = 'Tax ID'
-PDF_RECEIPT_LOGO_PATH = PROJECT_ROOT + '/static/images/openedx-logo-tag.png'
+PDF_RECEIPT_LOGO_PATH = PROJECT_ROOT + ''
 # Height of the Logo in mm
 PDF_RECEIPT_LOGO_HEIGHT_MM = 8
-PDF_RECEIPT_COBRAND_LOGO_PATH = PROJECT_ROOT + ''
+PDF_RECEIPT_COBRAND_LOGO_PATH = PROJECT_ROOT + '/static/images/default-theme/logo.png'
 # Height of the Co-brand Logo in mm
 PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM = 8
