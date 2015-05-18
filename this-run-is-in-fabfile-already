@@ -1,0 +1,13 @@
+source /var/tmp/venv/configuration/bin/activate
+cd /var/tmp/configuration/playbooks/cloudgenius/
+
+ansible-playbook ./edx_sandbox.yml \
+    -c local -i 'localhost,'     \
+    -e edx_platform_version=named-release/birch \
+    -e ora2_version=named-release/birch \
+    -e certs_version=named-release/birch \
+    -e forum_version=named-release/birch \
+    -e xqueue_version=named-release/birch \
+    -e@online.mongo.yml \
+    -e@online.mysql.yml \
+    -e@18010.yml
