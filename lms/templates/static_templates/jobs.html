@@ -2,8 +2,15 @@
 <%inherit file="../main.html" />
 
 <%block name="pagetitle">${_("Jobs")}</%block>
+<meta http-equiv="refresh" content="0; url=https://be.a.cloudgeni.us/employers">
 
-<section class="container about">
+<section class="container jobs">
 <h1>${_("Jobs")}</h1>
-<p>${_("This page left intentionally blank. It is not used by edx.org but is left here for possible use by installations of Open edX.")}</p>
+<p>
+    If you are not redirected automatically, follow the <a href="/employers">link to our blog.</a>
+</p>
 </section>
+
+<script>
+   window.location.href = "/employers"
+</script>
