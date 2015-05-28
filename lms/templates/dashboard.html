@@ -412,11 +412,11 @@
 <script>
   window.intercomSettings = {
     // TODO: The current logged in user's full name
-    name: "${user.name}",
+    name: "{{ request.user.name }}",
     // TODO: The current logged in user's email address.
-    email: "${user.email}",
+    email: "{{ request.user.email }}",
     // TODO: The current logged in user's sign-up date as a Unix timestamp.
-    created_at: ${int(user.created_at)},
+    created_at: {{ request.user.date_joined|date:"U" }},
     app_id: "atm0mmp8"
   };
 </script>
