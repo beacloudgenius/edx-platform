@@ -23,7 +23,7 @@
 
 <!-- css for parallax-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdn.cloudgeni.us/ishtyle.css">
+<link rel="stylesheet" href="https://cloudgenius.s3.amazonaws.com/ishtyle.css">
 
 ## Define a couple of helper functions to make life easier when
 ## embedding theme conditionals into templates. All inheriting
@@ -153,7 +153,7 @@
     </div>
 
     <%block name="footer">
-      ## Can be overridden by child templates wanting to hide the footer. 
+      ## Can be overridden by child templates wanting to hide the footer.
       <%
         if theme_enabled() and not is_microsite():
           footer_file = 'theme-footer.html'
