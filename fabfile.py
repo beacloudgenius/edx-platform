@@ -7,7 +7,7 @@ from fabric.api import *
 
 env.hosts = [
     'edxa.ec2.cloudgeni.us',
-    'edxe.ec2.cloudgeni.us',
+    #'edxe.ec2.cloudgeni.us',
     #'edxc.ec2.cloudgeni.us'
     # 'ip.add.rr.ess',
     # 'server2.domain.tld'
