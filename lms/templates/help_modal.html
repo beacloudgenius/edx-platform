@@ -50,13 +50,13 @@
 
     <p>${_('Have <strong>general questions about {platform_name}</strong>? You can find lots of helpful information in the {platform_name} {link_start}FAQ{link_end}.').format(
         link_start='<a href="{url}" target="_blank">'.format(
-          url=marketing_link('FAQ')
+          url="//www.cloudgeni.us/faq"
         ),
         link_end='</a>',
         platform_name=platform_name)}
       </p>
 
-    <p>${_('Have a <strong>question about something specific</strong>? You can contact the {platform_name} general support team directly:').format(
+    <p>${_('Have a <strong>question about something specific</strong>? You can contact the {platform_name} team directly:').format(
         platform_name=platform_name
       )}</p>
     <hr>
@@ -124,22 +124,21 @@
     <%
       dst = datetime.now(pytz.utc).astimezone(pytz.timezone("America/New_York")).dst()
       if dst:
-        open_time = "13:00"
-        close_time = "21:00"
-      else:
-        open_time = "14:00"
+        open_time = "17:00"
         close_time = "22:00"
+      else:
+        open_time = "18:00"
+        close_time = "23:00"
     %>
     <p>
     ${_(
         'Thank you for your inquiry or feedback.  We typically respond to a request '
         'within one business day (Monday to Friday, {open_time} UTC to {close_time} UTC.) In the meantime, please '
-        'review our {link_start}detailed FAQs{link_end} where most questions have '
-        'already been answered.'
+        'review our {link_start}FAQ{link_end} where we may have an answer for you already.'
     ).format(
         open_time=open_time,
         close_time=close_time,
-        link_start='<a href="{}" target="_blank" id="feedback-faq-link" tabindex="0">'.format(marketing_link('FAQ')),
+        link_start='<a href="//www.cloudgeni.us/faq" target="_blank" id="feedback-faq-link" tabindex="0">',
         link_end='</a>'
     )}
     </p>

@@ -8,7 +8,7 @@ ${_("Thank you for your purchase of ")} <b> ${course_names} </b>
 %if recipient_type == 'user':
 <p>${_("Your payment was successful.")}</p>
 % if marketing_link('FAQ'):
-<p>${_("If you have billing questions, please read the FAQ ({faq_url}) or contact {billing_email}.").format(billing_email=payment_support_email, faq_url=marketing_link('FAQ'))}</p>
+<p>${_("If you have billing questions, please read the FAQ ({faq_url}) or contact {billing_email}.").format(billing_email=payment_support_email, faq_url="//www.cloudgeni.us/faq")}</p>
 % else:
 <p>${_("If you have billing questions, please contact {billing_email}.").format(billing_email=payment_support_email)}</p>
 % endif

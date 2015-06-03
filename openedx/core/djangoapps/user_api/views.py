@@ -604,7 +604,7 @@ class RegistrationView(APIView):
             terms_text = _(u"Terms of Service and Honor Code")
 
         terms_link = u"<a href=\"{url}\">{terms_text}</a>".format(
-            url=marketing_link("HONOR"),
+            url="//www.cloudgeni.us/honor",
             terms_text=terms_text
         )
 
@@ -651,7 +651,7 @@ class RegistrationView(APIView):
         # in order to register a new account.
         terms_text = _(u"Terms of Service")
         terms_link = u"<a href=\"{url}\">{terms_text}</a>".format(
-            url=marketing_link("TOS"),
+            url="//www.cloudgeni.us/tos",
             terms_text=terms_text
         )
 
