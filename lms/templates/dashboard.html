@@ -431,13 +431,15 @@
     // Required attributes
     id: "${ user.id }",       // Unique id for the currently signed in user in your application.
     email: "${ user.email }", // Email of the currently signed in user.
-    // created_at: 1339438758,   // Timestamp in your system that represents when
-                                // the user first signed up. You'll want to send it
-                               // as seconds since the epoch.
+    created_at: "${ user.date_joined }" ,   // Timestamp in your system that represents when
+                                          // the user first signed up. You'll want to send it
+                                        // as seconds since the epoch.
 
     // Optional (these are examples. You can name attributes what you wish)
 
-    name: "${ user.username }", // Add any attributes you'd like to use in the email subject or body.
+    username: "${ user.username }", // Add any attributes you'd like to use in the email subject or body.
+    first_name: "${ user.first_name }", // Add any attributes you'd like to use in the email subject or body.
+    last_name: "${ user.last_name }", // Add any attributes you'd like to use in the email subject or body.
     //plan_name: 'premium'
   });
 </script>
